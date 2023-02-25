@@ -10,3 +10,9 @@ CREATE DATABASE IF NOT EXISTS pasteldb;
         material VARCHAR(50),
         PRIMARY KEY (id)
     );
+
+    SELECT * FROM pastel_Grande;
+
+
+    SELECT 1+1;
+    SELECT 1+1 AS nombre;
