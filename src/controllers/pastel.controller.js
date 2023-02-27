@@ -5,7 +5,7 @@ import { pool } from "../db.js";
 export const getPastel = async (req, res) => {
     try {
         const [rows] = await pool.query('SELECT * FROM pastel_Grande')
-    res.json(rows)
+        res.json(rows)
     } catch (error) {
         return res.status(500).json({
         error: 'Surgio algo inesperado'
@@ -35,7 +35,7 @@ export const getObtenerPastel = async (req, res) => {
 export const getCreatePastel = async (req, res) => {
     try {
         const { nombre, sabor, dibujo, color, especial, precio, tamano, forma, galleta_o_pan } = req.body
-    const  [rows] = await pool.query('INSERT INTO pastel_Grande (nombre, sabor, dibujo, color, especial, precio, tamano, forma, galleta_o_pan) VALUES (?,?,?,?,?,?,?,?,?)', [nombre, sabor, dibujo, color, especial, precio, tamano, forma, galleta_o_pan])
+        const  [rows] = await pool.query('INSERT INTO pastel_Grande (nombre, sabor, dibujo, color, especial, precio, tamano, forma, galleta_o_pan) VALUES (?,?,?,?,?,?,?,?,?)', [nombre, sabor, dibujo, color, especial, precio, tamano, forma, galleta_o_pan])
 
     // PARA EXTRAER EL JSON EN LA CONSOLA 
     // console.log(req.body)
