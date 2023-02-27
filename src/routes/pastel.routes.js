@@ -1,13 +1,16 @@
 import { Router } from "express";
+import { getCreatePastel, getDeletePastel, getObtenerPastel, getPastel, getUpdatePastel } from "../controllers/pastel.controller.js";
 
 const router = Router()
 
-router.get('/pastel', (req, res) => res.send({"nombre":"dennis", "apellido":"Mugarte"}))
+router.get('/pastel', getPastel)
 
-router.post('/pastel', (req, res) => res.send("creando"))
+router.get('/pastel/:id', getObtenerPastel)
 
-router.put('/pastel', (req, res) => res.send("actualizando"))
+router.post('/pastel', getCreatePastel)
 
-router.delete('/pastel', (req, res) => res.send("eliminando"))
+router.put('/pastel/:id', getUpdatePastel)
+
+router.delete('/pastel/:id', getDeletePastel)
 
 export default router
