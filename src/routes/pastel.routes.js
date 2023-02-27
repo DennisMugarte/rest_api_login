@@ -9,7 +9,7 @@ router.get('/pastel/:id', getObtenerPastel)
 
 router.post('/pastel', getCreatePastel)
 
-router.put('/pastel/:id', getUpdatePastel)
+router.patch('/pastel/:id', getUpdatePastel)
 
 router.delete('/pastel/:id', getDeletePastel)
 
