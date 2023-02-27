@@ -46,7 +46,7 @@ export const getCreatePastel = async (req, res) => {
 export const getDeletePastel = async (req, res) => {
     const [result] = await pool.query('DELETE FROM pastel_Grande WHERE id = ?', [req.params.id])
     if (result.affectedRows <= 0) return res.status(404).json({ 
-        message: 'The requested URL / was not found on this server'
+        Error: 'El id no esta registrada o ha sido eliminada'
     });
     res.sendStatus(204)
 }
@@ -66,3 +66,4 @@ export const getUpdatePastel = async (req, res) => {
     const [rows] = await pool.query('SELECT * FROM pastel_Grande WHERE id = ?', [id])
     res.json(rows[0])
 }
+
